@@ -1,0 +1,43 @@
+:root {
+    --default-color: rgba(0, 0, 0, 0); /* Transparent color */
+    --highlight-color: #ff6600;
+    /* Change this to your desired highlight color */
+    --fade-duration: 300ms; /* Adjust fade-out duration (optional) */
+}
+
+#container {
+    /* Adjust width and height if needed */
+    width: 600px;
+    /* Example width */
+    height: 400px;
+    /* Example height */
+    position: relative;
+    /* Needed for absolute positioning */
+}
+
+#background-image {
+    width: 100%;
+    /* Ensures image fills the container */
+    height: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--default-color); /* Use default color variable */
+    cursor: pointer;
+    transition: background-color var(--fade-duration) ease-in-out; /* Add transition */
+}
+
+.highlighted {
+    background-color: var(--highlight-color);
+    animation: highlight 1s ease-in-out;
+}
+
+@keyframes highlight {
+    0% { background-color: var(--default-color); }
+    100% {
+        background-color: var(--highlight-color);
+    }
+}
